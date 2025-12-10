@@ -1,0 +1,31 @@
+{
+  "name": "Timeline Dev Container",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    }
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    // "source=${localEnv:HOME}/.gemini,target=/home/node/.gemini,type=bind,consistency=cached",
+    // "source=${localEnv:HOME}/.nvm/versions/node/v24.10.0,target=/home/node/.nvm/versions/node/v24.10.0,type=bind,consistency=cached",
+    // "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "jripouteau.adonis-vscode-extension",
+        "AdonisJS.vscode-edge",
+        "jripouteau.japa-vscode",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "EditorConfig.EditorConfig",
+        "Vue.volar",
+        "Selemondev.shadcn-vue"
+      ]
+    }
+  }
+}
