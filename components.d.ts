@@ -12,5 +12,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./inertia/components/ui/button/Button.vue')['default']
+    FuckTimeline: typeof import('./inertia/components/fuckTimeline.vue')['default']
+    Timeline: typeof import('./inertia/components/Timeline.vue')['default']
+    TTimeline: typeof import('./inertia/components/tTimeline.vue')['default']
   }
 }

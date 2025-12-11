@@ -32,7 +32,7 @@
       </nav>
     </header>
     <div class="p-6 lg:p-8">
-      <div class="flex flex-col justify-center space-y-6 w-full sm:w-[350px] mx-auto">
+      <div class="flex flex-col justify-center space-y-6 w-full mx-auto">
         <slot />
       </div>
     </div>
