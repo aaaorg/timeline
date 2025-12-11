@@ -6,6 +6,8 @@ import { createSSRApp, h } from 'vue'
 import type { DefineComponent } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
+import { Link } from '@inertiajs/vue3'
+import AppLayout from '~/layouts/AppLayout.vue'
 
 const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
 
@@ -14,16 +16,22 @@ createInertiaApp({
 
   title: (title) => `${title} - ${appName}`,
 
-  resolve: (name) => {
-    return resolvePageComponent(
+  resolve: async (name) => {
+    const page = (await resolvePageComponent(
       `../pages/${name}.vue`,
       import.meta.glob<DefineComponent>('../pages/**/*.vue')
-    )
+    )) as DefineComponent
+
+    page.default.layout = page.default.layout || AppLayout
+    console.log('Resolved page:', page)
+
+    return page
   },
 
   setup({ el, App, props, plugin }) {
     createSSRApp({ render: () => h(App, props) })
       .use(plugin)
+      .component('Link', Link)
       .mount(el)
   },
 })
