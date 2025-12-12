@@ -1,7 +1,7 @@
 <script setup lang="ts">
-defineProps<{
-  messages: Record<string, string | Record<string, string>>
-}>()
+// defineProps<{
+//   messages: Record<string, string | Record<string, string>>
+// }>()
 </script>
 
 <template>

@@ -65,8 +65,10 @@
     "@adonisjs/vite": "^4.0.0",
     "@inertiajs/vue3": "^2.2.20",
     "@tailwindcss/vite": "^4.1.17",
+    "@vee-validate/zod": "^4.15.1",
     "@vinejs/vine": "^3.0.1",
     "@vue/server-renderer": "^3.5.25",
+    "@vueuse/core": "^14.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "edge.js": "^6.2.1",
@@ -77,7 +79,9 @@
     "reka-ui": "^2.6.1",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
-    "vue": "^3.5.25"
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.25",
+    "zod": "^3.25.76"
   },
   "hotHook": {
     "boundaries": [
