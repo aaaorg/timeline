@@ -9,6 +9,9 @@ tmp
 .env.production.local
 .env.development.local
 
+# Include devcontainer environment variables
+!.devcontainer/.env
+
 # Frontend assets compiled code
 public/assets
 
