@@ -2,7 +2,6 @@
 import AuthLayout from '~/layouts/AuthLayout.vue'
 import { useForm } from '@inertiajs/vue3'
 import { Loader } from 'lucide-vue-next'
-import { router } from '@inertiajs/vue3'
 
 defineOptions({ layout: AuthLayout })
 
@@ -28,37 +27,30 @@ const form = useForm({
 
   <form
     class="grid gap-3 pt-32"
-    @submit.prevent="form.post('/register', { onSuccess: () => form.reset() })"
+    @submit.prevent="
+      form.post('/register', { onSuccess: () => form.reset(), preserveScroll: true })
+    "
   >
-    <div class="grid gap-1">
-      <Label class="grid gap-1">
-        <span>Full Name</span>
-        <Input type="text" v-model="form.fullName" />
-      </Label>
-      <div v-if="form.errors.fullName" class="text-red-500 text-sm">
-        {{ form.errors.fullName }}
-      </div>
-    </div>
+    <FormInput
+      label="Full Name"
+      v-model="form.fullName"
+      :error="form.errors.fullName"
+      :disabled="form.processing"
+    ></FormInput>
 
-    <div class="grid gap-1">
-      <Label class="grid gap-1">
-        <span>Email</span>
-        <Input type="email" v-model="form.email" />
-      </Label>
-      <div v-if="form.errors.email" class="text-red-500 text-sm">
-        {{ form.errors.email }}
-      </div>
-    </div>
+    <FormInput
+      label="Email"
+      v-model="form.email"
+      :error="form.errors.email"
+      :disabled="form.processing"
+    ></FormInput>
 
-    <div class="grid gap-1">
-      <Label class="grid gap-1">
-        <span>Password</span>
-        <Input type="password" v-model="form.password" />
-      </Label>
-      <div v-if="form.errors.password" class="text-red-500 text-sm">
-        {{ form.errors.password }}
-      </div>
-    </div>
+    <FormInput
+      label="Password"
+      v-model="form.password"
+      :error="form.errors.password"
+      :disabled="form.processing"
+    ></FormInput>
 
     <Button type="submit" :disabled="form.processing">
       <Loader v-if="form.processing" class="mr-2 h-4 w-4 animate-spin" />
