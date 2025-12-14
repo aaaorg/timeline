@@ -42,6 +42,7 @@ declare module 'vue' {
     FormItem: typeof import('./inertia/components/ui/form/FormItem.vue')['default']
     FormLabel: typeof import('./inertia/components/ui/form/FormLabel.vue')['default']
     FormMessage: typeof import('./inertia/components/ui/form/FormMessage.vue')['default']
+    GlobalCommand: typeof import('./inertia/components/GlobalCommand.vue')['default']
     Input: typeof import('./inertia/components/ui/input/Input.vue')['default']
     Label: typeof import('./inertia/components/ui/label/Label.vue')['default']
     Timeline: typeof import('./inertia/components/Timeline.vue')['default']
